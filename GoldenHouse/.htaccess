@@ -1,0 +1,10 @@
+# Matjaz: modified .htaccess file to remove index.php file from URL
+# from Codeigniter forum: http://www.gotphp.com/codeigniter-htaccess-setup/54558/
+
+# mod_rewrite rules
+RewriteEngine on
+
+# If the file/dir is NOT real go to index
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [QSA,L]
