@@ -25,7 +25,7 @@ class TestController extends CI_Controller
 		$this->load->view('TestView', $data);
 		*/
 		
-		$data['val'] = array('element1', 'element2', 'element3', 'element4', 'element5');
+		$data['val'] = array('element1', 'element2', 'element3', 'element4', 'element5', 'element6');
 		
 		$this->load->view('TestView', $data);
 		
