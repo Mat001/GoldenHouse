@@ -15,6 +15,19 @@ class Home_controller extends CI_Controller
 		$this->load->view('Portal_home');
 	}
 	
+	
+	public function contactUs()
+	{
+		$this->load->view('Portal_contactUs');
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 	public function testHome_controller()
 	{
 		$this->unit->run(add(3, 4), 7, "testing_index_function"); // @TODO
