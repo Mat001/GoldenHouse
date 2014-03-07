@@ -12,33 +12,16 @@ class Home_controller extends CI_Controller
 	// index()
 	public function index()
 	{
-		$this->load->view ( 'Portal_home' );
-	}
-	
-	public function findEstate()
-	{
-		$this->load->view ( 'Portal_findEstate' );
-	}
-	
-	public function contactUs()
-	{
-		$this->load->view ( 'Portal_contactUs' );
-	}
-	
-	public function login()
-	{
-		$this->load->view ( 'Portal_login' );
-	}
-	
-	public function about()
-	{
-		$this->load->view ( 'Portal_about' );
+		$this->load->view ( 'Portal_home' );	
 	}
 	
 	public function terms()
 	{
 		$this->load->view ( 'terms' );
 	}
+	
+	
+	
 	
 	// TEST FUNTION FOR HOME CONTROLLER
 	public function testHome_controller()
