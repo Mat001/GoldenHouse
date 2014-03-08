@@ -15,6 +15,16 @@ class Home_controller extends CI_Controller
 		$this->load->view ( 'Portal_home' );	
 	}
 	
+	public function About()
+	{
+		$this->load->view ( 'Portal_about' );
+	}
+	
+	public function ContactUs()
+	{
+		$this->load->view ( 'Portal_contactUs' );
+	}
+	
 	public function terms()
 	{
 		$this->load->view ( 'terms' );

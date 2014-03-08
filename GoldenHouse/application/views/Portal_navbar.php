@@ -4,11 +4,13 @@
 <center>
 <div>
 	<ul>
-		<li><a href="http://localhost:8080/git/GoldenHouseGit/GoldenHouse/Home_controller">Home</a></li>
-		<li><a href="http://localhost:8080/git/GoldenHouseGit/GoldenHouse/FindEstate_controller">Find Estate</a></li>
-		<li><a href="http://localhost:8080/git/GoldenHouseGit/GoldenHouse/ContactUs_controller">Contact Us</a></li>
-		<li><a href="http://localhost:8080/git/GoldenHouseGit/GoldenHouse/Login_controller">Login</a></li>
-		<li><a href="http://localhost:8080/git/GoldenHouseGit/GoldenHouse/About_controller">About</a></li>
+	<!-- USING 'php echo base_url()' to shorten the href URLs. -->
+	<!-- 'php echo base_url()' is equivalent to 'http://localhost:8080/git/GoldenHouseGit/GoldenHouse/' --> 
+		<li><a href="<?php echo base_url(); ?>Home_controller">Home</a></li>
+		<li><a href="<?php echo base_url(); ?>FindEstate_controller">Find Estate</a></li>
+		<li><a href="<?php echo base_url(); ?>Home_controller/ContactUs">Contact Us</a></li>
+		<li><a href="<?php echo base_url(); ?>Login_controller">Login</a></li>
+		<li><a href="<?php echo base_url(); ?>Home_controller/About">About</a></li>
 	</ul>
 </div>
 </center>
