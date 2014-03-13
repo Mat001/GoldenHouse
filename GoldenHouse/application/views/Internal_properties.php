@@ -2,25 +2,23 @@
 
 <html>
 <head>
-
-<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/internal_navtabs.css">
-<!-- <script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>  -->
-<!-- <script type="text/javascript" src="js/bootstrap.js"></script>  -->
-<!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.css">  -->
-
+    <link href='http://fonts.googleapis.com/css?family=Raleway:300|Open+Sans' rel='stylesheet' type='text/css'>
+    <meta charset="utf-8">
+    <title>Golden House Internal</title>
+    <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>css/css_internal_home.css">
 </head>
 <body>
 
-<h2 align="center">Manage properties / upload images</h2>
+<header class="center-ims">
+    <h2>Manage properties / images</h2>
+</header>
 
 <div align="center" id="upload_image">
-
-<?php echo $error;?>
+	<?php echo $error;?>
 
 	<?php echo form_open_multipart('Internal_properties_controller/uploadImages');?>
 	<input type="file" name="userfile" size="20" />
 	<input type="submit" value="upload" />
-</form>
 </div>
 
 </body>

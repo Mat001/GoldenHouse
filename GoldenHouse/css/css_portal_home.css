@@ -1,0 +1,167 @@
+@CHARSET "ISO-8859-1";
+
+@font-face {
+	font-family: 'Raleway', sans-serif;
+	font-family: 'Open Sans', sans-serif;
+	src:
+		url("http://fonts.googleapis.com/css?family=Raleway:300|Open+Sans' rel='stylesheet' type='text/css'");
+}
+
+body {
+	background-color: #fcfaef;
+	font-family: 'Open Sans', sans-serif;
+	font-size: normal;
+	color: #1C1C1C;
+	margin: 0px;
+}
+
+h1 {
+	font-family: 'Raleway', sans-serif;
+	font-size: 3.0em;
+	color: #424242;
+	font-weight: 200;
+}
+
+h2 {
+	font-family: 'Raleway', sans-serif;
+	color: #2E2E2E;
+	font-weight: 200;
+}
+
+h3 {
+	font-family: 'Raleway', sans-serif;
+	color: #2E2E2E;
+	font-weight: 200;
+}
+
+h5 {
+	font-family: 'Raleway', sans-serif;
+	color: #2E2E2E;
+	font-weight: 200;
+}
+
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.center {
+	margin-left: 27%;
+	display: block;
+	border-radius: 15px
+}
+
+header.center {
+	margin-left: 39%;
+	margin-right: auto;
+}
+
+footer.center {
+	margin-left: 39%;
+	margin-top: 3%;
+	/* 	problematic for Contact Us page - page a bit off margin-right : */
+}
+
+section.center
+{
+	margin-left: 440px;
+}
+
+a:link {
+	font-weight: bold;
+	color: #8B6914;
+}
+
+a:visited {
+	font-weight: bold;
+	color: #CD950C;
+}
+
+a:hover {
+	color: #CD950C;
+}
+
+a:active {
+	color: #CD950C;
+}
+
+/* NAVBAR IN PUBLIC PAGES */
+nav.center {
+	list-style-type: none;
+	margin-top: 2%;
+	margin-left: 38%;
+	margin-right: auto;
+	margin-bottom: 2%;
+	padding: 0%;
+	/*background-color: #8B6914;*/
+}
+
+nav.center li {
+	display: inline;
+	padding-left: 0px;
+	padding-top: 7px;
+	padding-right: 0px;
+	padding-bottom: 7px;
+	border-radius: 10px;
+	background-color: #8B6914;
+}
+
+nav.center a:link,a:visited {
+	/*display:block;*/
+	width: 120px;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #8B6914;
+	text-align: center;
+	padding: 7px;
+	border-radius: 10px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+nav.center a:hover,a:active {
+	background-color: #CD950C;
+	color: #FFFFFF;
+}
+
+
+/* NAVBAR IN INTERNAL PAGES - IMS*/
+
+nav.center-ims {
+	list-style-type: none;
+	margin-top: 2%;
+	margin-left: 29%;	/* pulled navbar a bit to the left to center it (differs from main portal) */
+	margin-right: auto;
+	margin-bottom: 2%;
+	padding: 0%;
+	/*background-color: #8B6914;*/
+}
+
+nav.center-ims li {
+	display: inline;
+	padding-left: 0px;
+	padding-top: 7px;
+	padding-right: 0px;
+	padding-bottom: 7px;
+	border-radius: 10px;
+	background-color: #8B6914;
+}
+
+nav.center-ims a:link,a:visited {
+	/*display:block;*/
+	width: 120px;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #8B6914;
+	text-align: center;
+	padding: 7px;
+	border-radius: 10px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+nav.center-ims a:hover,a:active {
+	background-color: #CD950C;
+	color: #FFFFFF;
+}

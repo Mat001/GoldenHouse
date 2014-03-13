@@ -16,7 +16,7 @@ class Home_controller extends CI_Controller
 	}
 	
 	public function About()
-	{
+	{	
 		$this->load->view ( 'Portal_about' );
 	}
 	

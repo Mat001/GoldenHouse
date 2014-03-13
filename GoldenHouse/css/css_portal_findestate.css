@@ -1,0 +1,32 @@
+@CHARSET "ISO-8859-1";
+
+div.filter
+{
+ float:left;
+ width:260px;
+ margin-right:5px;
+ margin-left:0px;
+ margin-top:23px;
+ padding:10px;
+ border:1px solid gray;
+}
+
+div.results
+{
+/*float:inherit;*/
+float:right;
+width:600px; 
+/*height:420px;*/
+border:1px solid gray;
+padding:10px;
+margin-right: 320px;
+margin-left:1px;
+margin-top:0px;
+margin-bottom:0px;
+}
+
+
+
+
+
+

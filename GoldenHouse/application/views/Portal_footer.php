@@ -1,4 +1,6 @@
-<!-- PORTAL FOOTER -->
+<head>
+<body>
+<div>
 
 <center>
 	<h6>Copyright &copy; GoldenHouseLLC
