@@ -2,31 +2,55 @@
 
 div.filter
 {
- float:left;
- width:260px;
- margin-right:5px;
- margin-left:0px;
- margin-top:23px;
- padding:10px;
- border:1px solid gray;
+	 float:left;
+	 width:260px;
+	 margin-right:5px;
+	 margin-left:0px;
+	 margin-top:23px;
+	 padding:10px;
+	 border:1px solid gray;
+	 border-radius:15px;
+	 background-color: white;
+	 font-size: small;
+	 font-weight: bold;
 }
 
 div.results
 {
-/*float:inherit;*/
-float:right;
-width:600px; 
-/*height:420px;*/
-border:1px solid gray;
-padding:10px;
-margin-right: 320px;
-margin-left:1px;
-margin-top:0px;
-margin-bottom:0px;
+	float:right;
+	width:600px; 
+	border:1px solid gray;
+	padding-left:10px;  /* Increasing this or bottom padding prevented 'results' div to pop down under 'filer' div */
+	padding-bottom:15px; 
+	margin-right: 320px;
+	margin-left:1px;
+	margin-top:0px;
+	margin-bottom:0px;
+	border-radius:15px;
+	background-color: white;
 }
 
+table
+{
+	width:600px;
+	padding-top: 15px;
+	border-spacing: 15px;
+	font-size: small;
+}
 
+img
+{
+	border-radius:5px;
+	width:80%;
+}
 
+td.subrow
+{
+	width: 60%;
+	font-weight: bold;
+}
 
-
-
+th.pic_align
+{
+	vertical-align: top;
+}

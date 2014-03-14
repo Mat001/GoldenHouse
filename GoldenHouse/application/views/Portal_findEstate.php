@@ -1,19 +1,3 @@
-<?php //include_once 'Portal_header.php'; ?>
-<?php //include_once 'portal_navbar.php';?>
-
-<!-- <p align="center">Here will be show room to search for estates.</p>  -->
-
-<!-- NEED IF CONDITION - ONLY DISPLAY IMAGE IF IT HAS BEEN UPLOADED?ACTIVATED FROM INTERNAL PROPERTIES PAGE -->
-<?php //echo "Image successfully uploaded." ?>
-<!-- <img src="<//?php echo $img ?>">  -->
-
-
-<?php //echo anchor('upload', 'Upload Another File!'); ?>
-
-
-<?php //include_once 'Portal_footer.php';?>
-
-
 <!DOCTYPE html>
 
 <html>
@@ -45,9 +29,9 @@
 	
 	<section class="center">
 		<div class="filter">
-			<form>	<!-- CHANGE INTO A 1 row TABLE (7 items), or 2x3+1? -->
+			<form >	<!-- CHANGE INTO A 1 row TABLE (7 items), or 2x3+1? -->
 				<p>
-					Price <select name="price" >
+					Price &nbsp;&nbsp;&nbsp; <select name="price" >
 						<option value="0 - 100">0 - 100,000</option>
 						<option value="100 - 250">100,000 - 250,000</option>
 						<option value="250 - 500">250,000 - 500,000</option>
@@ -56,14 +40,14 @@
 					</select>
 				</p>
 				<p>
-					Property Type <select name="Property Type">
+					Type &nbsp;&nbsp;&nbsp; <select name="Property Type">
 						<option value="Residential">Single-family house</option>
 						<option value="Estate">Multi-family house</option>
 						<option value="Mansion">Apartment</option>
 					</select>
 				</p>
 				<p>
-					Location <select name="Location">
+					Location &nbsp;&nbsp;&nbsp; <select name="Location">
 						<option value="Walnut Creek">Walnut Creek</option>
 						<option value="Lafayette">Lafayette</option>
 						<option value="Concord">Concord</option>
@@ -72,7 +56,7 @@
 					</select>
 				</p>
 				<p>
-					Bedrooms <select name="Bedrooms">
+					Bedrooms &nbsp;&nbsp;&nbsp; <select name="Bedrooms">
 						<option value="1">1 +</option>
 						<option value="2">2 +</option>
 						<option value="3">3 +</option>
@@ -81,7 +65,7 @@
 					</select>
 				</p>
 				<p>
-					Bathrooms <select name="Bathrooms">
+					Bathrooms &nbsp;&nbsp;&nbsp; <select name="Bathrooms">
 						<option value="1">1 +</option>
 						<option value="2">2 +</option>
 						<option value="3">3 +</option>
@@ -90,7 +74,7 @@
 					</select>
 				</p>
 				<p>
-					Size (sq ft) <select name="size">
+					Size (sq ft) &nbsp;&nbsp;&nbsp; <select name="size">
 						<option value="600+">600+</option>
 						<option value="1000+">1000+</option>
 						<option value="1400+">1400+</option>
@@ -100,7 +84,7 @@
 					</select>
 				</p>
 				<p>
-					Year <select name="year">
+					Year &nbsp;&nbsp;&nbsp; <select name="year">
 						<option value="before 1900">before 1900</option>
 						<option value="1900+">1900+</option>
 						<option value="1930+">1930+</option>
@@ -118,43 +102,49 @@
 		
 		<div class="results">
 		
-		<table style="width:300px">
+		<table>
 			<tr>
-			  <td>Jill</td>
-			  <td>Smith</td>
-			  <td>50</td>
+			  <th rowspan="4" class="pic_align"><img src="images/1024LenevePl/1LenevePl.jpg" alt="1LenevePl.jpg"></th>
+			  <td class="subrow">1024 Leneve Drive, Walnut Creek, CA</td>
 			</tr>
 			<tr>
-			  <td>Eve</td>
-			  <td>Jackson</td>
-			  <td>94</td>
+			  <td>$725,000</td>
 			</tr>
 			<tr>
-			  <td>Eve</td>
-			  <td>Jackson</td>
-			  <td>94</td>
+			  <td>3 bed, 2 full bath, single-family home.</td>
 			</tr>
 			<tr>
-			  <td>Eve</td>
-			  <td>Jackson</td>
-			  <td>94</td>
+			  <td>FOR SALE</td>
+			</tr>
+			
+			<tr>
+			  <th rowspan="4" class="pic_align"><img src="images/1360ContraCostaDr/1ContraCostaDr.jpg" alt="1ContraCostaDr.jpg"></th>
+			  <td class="subrow">936-942 Lexington Ave, Lafayette, CA</td>
 			</tr>
 			<tr>
-			  <td>Eve</td>
-			  <td>Jackson</td>
-			  <td>94</td>
+			  <td>$430,000</td>
 			</tr>
 			<tr>
-			  <td>Eve</td>
-			  <td>Jackson</td>
-			  <td>94</td>
+			  <td>3 bed, 2 full bath, apartment in a multi-apartment building. Quiet.</td>
 			</tr>
 			<tr>
-			  <td>Eve</td>
-			  <td>Jackson</td>
-			  <td>94</td>
+			  <td>FOR SALE</td>
 			</tr>
-		
+			
+			<tr>
+			  <th rowspan="4" class="pic_align"><img src="images/1428NavellierSt/1navellier.jpg" alt="1navellier.jpg"></th>
+			  <td class="subrow">1360 Contra Costa Dr, Lafayette, CA</td>
+			</tr>
+			<tr>
+			  <td>$800,000</td>
+			</tr>
+			<tr>
+			  <td>4 bed, 2 full bath, single-family home.</td>
+			</tr>
+			<tr>
+			  <td>FOR SALE</td>
+			</tr>
+			
 			</table> 
 		</div>
 

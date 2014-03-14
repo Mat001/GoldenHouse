@@ -90,7 +90,7 @@ a:active {
 nav.center-ims {
 	list-style-type: none;
 	margin-top: 2%;
-	margin-left: 30%;	/* pulled navbar a bit to the left to center it (differs from main portal) */
+	margin-left: 30%;	/* pulled navbar a bit to the left to center it (differs from main portal), it's 39% in css_portal_home.css */
 	margin-right: auto;
 	margin-bottom: 2%;
 	padding: 0%;
