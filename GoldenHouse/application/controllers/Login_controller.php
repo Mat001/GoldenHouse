@@ -61,11 +61,5 @@ class Login_controller extends CI_Controller
 		}
 	}
 	
-	
-	// loads terms of service in this page
-	public function terms()
-	{
-		$this->load->view ( 'Terms' );
-	}
 }
 ?>

@@ -11,7 +11,7 @@ class FindEstate_controller extends CI_Controller
 	
 	public function terms()
 	{
-		$this->load->view ('terms');
+		$this->load->view ('Portal_terms');
 	}
 }
 ?>

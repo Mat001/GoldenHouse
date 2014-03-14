@@ -32,7 +32,7 @@
 
 <!-- MAIN CONTENT -->
 <div>
-	<h3 align="center">Welcome to agency's internal system.</h3>
+	<h3 align="center">Welcome to agency's internal management system (IMS - information management system).</h3>
 </div>
 
 	

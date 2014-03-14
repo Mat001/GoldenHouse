@@ -1,6 +1,6 @@
 @CHARSET "ISO-8859-1";
 
-div.filter
+div.filter	/* div showing search parameters */
 {
 	 float:left;
 	 width:260px;
@@ -15,7 +15,7 @@ div.filter
 	 font-weight: bold;
 }
 
-div.results
+div.results	/* div displaying found properties */
 {
 	float:right;
 	width:600px; 
@@ -30,27 +30,27 @@ div.results
 	background-color: white;
 }
 
-table
+table	/* style for the results table */
 {
-	width:600px;
+	width:600px;		/* make table same width as 'results' div */
 	padding-top: 15px;
 	border-spacing: 15px;
 	font-size: small;
 }
 
-img
+img		/* style for property images within the table */
 {
 	border-radius:5px;
 	width:80%;
 }
 
-td.subrow
+td.subrow	/* Text in each subrow: location, price, description, for sale */
 {
 	width: 60%;
 	font-weight: bold;
 }
 
-th.pic_align
+th.pic_align	/* alignement of property image inside the cell */
 {
-	vertical-align: top;
+	vertical-align: top; /* put it on top */
 }

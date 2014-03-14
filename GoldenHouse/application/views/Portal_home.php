@@ -8,12 +8,12 @@
 </head>
 
 <body>
-
+	<!--  ******************************************    HEADER     ****************************************** -->
     <header class="center">
         <h1>Golden House LLC</h1>
     </header>       
     
-
+	<!--  ******************************************    NAVIGATION TABS     ****************************************** -->
     <nav class="center">
 	<ul>
 		<li><a href="<?php echo base_url(); ?>Home_controller">Home</a></li>
@@ -22,12 +22,14 @@
 		<li><a href="<?php echo base_url(); ?>Home_controller/About">About</a></li>
 	</ul>
     </nav>
-
+	
+	<!--  ******************************************    IMAGE     ****************************************** -->
     <section>
         <img src="images/homepage6_img.jpg" class="center" width="50%" alt="Homepage image of a house, homepage6_img.jpg">
     </section>
     
     
+    <!--  ******************************************    FOOTER     ****************************************** -->
     <footer id=footer class="center">
         <h6>Copyright 2014 &copy; GoldenHouseLLC  |  
         

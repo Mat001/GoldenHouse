@@ -11,12 +11,12 @@
 </head>
 
 <body>
-
+	<!--  ******************************************    HEADER     ****************************************** -->
 	<header class=center>
 		<h1>Golden House LLC</h1>
 	</header>
 
-
+	<!--  ******************************************    NAVIGATION     ****************************************** -->
 	<nav class=center>
 		<ul>
 			<li><a href="<?php echo base_url(); ?>Home_controller">Home</a></li>
@@ -27,9 +27,15 @@
 	</nav>
 
 	
+											
+	<!--  ******************************************    CENTER SECTION     ****************************************** -->
 	<section class="center">
+		
+		
+		<!--  ******************************************    SEARCH PARAMETERS     ****************************************** -->
+											
 		<div class="filter">
-			<form >	<!-- CHANGE INTO A 1 row TABLE (7 items), or 2x3+1? -->
+			<form >	
 				<p>
 					Price &nbsp;&nbsp;&nbsp; <select name="price" >
 						<option value="0 - 100">0 - 100,000</option>
@@ -100,6 +106,9 @@
 		</div> <!-- form div -->
 		<br>
 		
+		
+				
+		<!-- *****************************    SEARCH RESULTS - FOUND PROPERTIES    *******************************-->
 		<div class="results">
 		
 		<table>
@@ -151,6 +160,10 @@
 	</section>
 	<br><br>
 
+	
+	
+	<!-- *****************************    FOOTER    *******************************-->
+	
 	<footer id=footer class="center" style="clear: both; padding-top: 40px " >
 		<h6>Copyright 2014 &copy; GoldenHouseLLC | 
 
