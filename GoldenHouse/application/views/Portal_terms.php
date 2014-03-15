@@ -5,17 +5,17 @@
     <link href='http://fonts.googleapis.com/css?family=Raleway:300|Open+Sans' rel='stylesheet' type='text/css'>
     <meta charset="utf-8">
     <title>Golden House Real Estate</title>
-     <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>css/css_portal_home.css">
-     <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>css/css_portal_terms.css">
+    <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>css/css_portal_home.css">
+    <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>css/css_portal_terms.css">
 </head>
 
 <body>
-
+<!--  ******************************************    HEADER     ****************************************** -->
     <header class="center">
         <h3>Golden House LLC</h3>
     </header>        
-
-
+	
+	<!--  ******************************************    CONTENT     ****************************************** -->
 	<h5>Terms and Conditions of Service</h5>
 	<article>
 		<p>
@@ -41,6 +41,11 @@
 	    fiant sollemnes in futurum.
 		</p>
 	</article>
-
+	
+	<!--  ******************************************    FOOTER     ****************************************** -->
+    <footer class=center>
+        <h6>Copyright 2014 &copy; GoldenHouseLLC</h6>    
+    </footer>
+	
 </body>
 </html>

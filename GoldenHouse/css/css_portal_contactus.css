@@ -1,7 +1,17 @@
 @CHARSET "ISO-8859-1";
 
 section.center {
-    margin-left: 47%;
-    margin-right: auto;
+   margin-left: 37%;
+   margin-right: auto;
     
+}
+
+h2
+{
+	margin-left: 160px;
+}
+
+h4
+{
+	margin-left: 160px;
 }

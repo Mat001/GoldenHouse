@@ -15,12 +15,12 @@
     
 	<!--  ******************************************    NAVIGATION TABS     ****************************************** -->
     <nav class="center">
-	<ul>
-		<li><a href="<?php echo base_url(); ?>Home_controller">Home</a></li>
-		<li><a href="<?php echo base_url(); ?>FindEstate_controller">Find Estate</a></li>
-		<li><a href="<?php echo base_url(); ?>Home_controller/ContactUs">Contact Us</a></li>
-		<li><a href="<?php echo base_url(); ?>Home_controller/About">About</a></li>
-	</ul>
+		<ul>
+			<li><a href="<?php echo base_url(); ?>Home_controller">Home</a></li>
+			<li><a href="<?php echo base_url(); ?>FindEstate_controller">Find Estate</a></li>
+			<li><a href="<?php echo base_url(); ?>Home_controller/ContactUs">Contact Us</a></li>
+			<li><a href="<?php echo base_url(); ?>Home_controller/About">About</a></li>
+		</ul>
     </nav>
 	
 	<!--  ******************************************    IMAGE     ****************************************** -->
@@ -48,6 +48,5 @@
 		?>
         | <a style="color:#8B6914" href="<?php echo base_url(); ?>Login_controller">Agency Login</a></h6>
     </footer>
-    <!-- style="color:black;" -->
 </body>
 </html>

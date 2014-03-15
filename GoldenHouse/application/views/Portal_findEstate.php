@@ -2,12 +2,11 @@
 
 <html>
 <head>
-<link href='http://fonts.googleapis.com/css?family=Raleway:300|Open+Sans'	rel='stylesheet' type='text/css'>
-<meta charset="utf-8">
-<title>Find Estate</title>
-<link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>css/css_portal_home.css">
-<link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>css/css_portal_findestate.css">
-
+	<link href='http://fonts.googleapis.com/css?family=Raleway:300|Open+Sans'	rel='stylesheet' type='text/css'>
+	<meta charset="utf-8">
+	<title>Find Estate</title>
+	<link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>css/css_portal_home.css">
+	<link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>css/css_portal_findestate.css">
 </head>
 
 <body>
@@ -26,7 +25,6 @@
 		</ul>
 	</nav>
 
-	
 											
 	<!--  ******************************************    CENTER SECTION     ****************************************** -->
 	<section class="center">
@@ -159,8 +157,6 @@
 
 	</section>
 	<br><br>
-
-	
 	
 	<!-- *****************************    FOOTER    *******************************-->
 	
@@ -182,6 +178,5 @@
 		?> 
 		| <a style="color:#8B6914" href="<?php echo base_url(); ?>Login_controller">Agency Login</a></h6>
 	</footer>
-
 </body>
 </html>

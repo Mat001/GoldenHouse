@@ -26,9 +26,9 @@ class Model_useraccounts extends CI_Model
 		
 		// if query found the user (only ONE row - one user with this criteria) then return true otherwise false 
 		if($query->num_rows() == 1)
-		{ return true; }
+			{ return true; }
 		else 
-		{ return false; }
+			{ return false; }
 		
 	}
 }
