@@ -56,7 +56,9 @@ class Login_controller extends CI_Controller
 		{ return true; }
 		else 
 		{ 
+			// @TODO: set message 'Incorrect username / password' only if they are really incorrect, NOT IF ONE OF THEM IS MISSING
 			$this->form_validation->set_message('validateCredentials', 'Incorrect username / password.');
+			
 			return false;
 		}
 	}

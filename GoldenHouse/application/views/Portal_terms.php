@@ -4,7 +4,7 @@
 <head>
     <link href='http://fonts.googleapis.com/css?family=Raleway:300|Open+Sans' rel='stylesheet' type='text/css'>
     <meta charset="utf-8">
-    <title>Golden House Real Estate</title>
+    <title>Terms and Conditions</title>
     <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>css/css_portal_home.css">
     <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>css/css_portal_terms.css">
 </head>
@@ -44,7 +44,13 @@
 	
 	<!--  ******************************************    FOOTER     ****************************************** -->
     <footer class=center>
-        <h6>Copyright 2014 &copy; GoldenHouseLLC</h6>    
+        <h6>Copyright 2014 &copy; GoldenHouseLLC</h6>   
+        
+        <!-- JAVASCRIPT script to close the pop up window by clicking on button -->
+        <form method="post">
+			<input type="button" value="Close Window" onclick="window.close()">
+		</form>
+         
     </footer>
 	
 </body>

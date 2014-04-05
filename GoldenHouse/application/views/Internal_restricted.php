@@ -4,7 +4,7 @@
 <head>
     <link href='http://fonts.googleapis.com/css?family=Raleway:300|Open+Sans' rel='stylesheet' type='text/css'>
     <meta charset="utf-8">
-    <title>Golden House Internal</title>
+    <title>Internal Restricted</title>
     <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>css/css_internal_home.css">
 </head>
 

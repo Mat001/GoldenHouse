@@ -61,9 +61,14 @@ header.center-ims {
 footer.center {
 	margin-left: 39%;
 	margin-top: 3%;
-	// 	problematic for Contact Us page - page a bit off margin-right :
-	auto;
+	
 }
+
+section.center
+{
+	margin-left: 440px;
+}
+
 
 a:link {
 	font-weight: bold;

@@ -3,14 +3,16 @@
 class Model_properties extends CI_Model
 {
 	
+	
+	
+	
+	
+	
 	public function getImages()
 	{
 		
 		
 	}
-	
-	
-	
 	
 	//  @TODO DO LATER FOR UPLOADING IMAGES INTO SHOW ROOM
 	public function doUpload()
