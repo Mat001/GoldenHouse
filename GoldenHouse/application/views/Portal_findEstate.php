@@ -26,6 +26,30 @@
 		</ul>
 	</nav>
 
+	<?php 
+			//print_r($results);
+		?>
+		
+	<?php 
+	
+	foreach ($results as $row)
+	{
+		//echo $row->id;
+		echo $row->sold;
+		echo $row->type;
+		echo $row->price;
+		echo $row->bedrooms;
+		echo $row->bathrooms;
+		echo $row->size;
+		echo $row->year;
+		echo $row->location;
+		echo $row->address;
+		echo $row->descrip_sh;
+		//echo $row->descr_lo;
+		echo "<br><br>";
+	}
+	
+	?>
 											
 	<!--  ******************************************    CENTER SECTION     ****************************************** -->
 	<section class="center">

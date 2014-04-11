@@ -6,154 +6,107 @@
     <meta charset="utf-8">
     <title>Internal Properties</title>
     <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>css/css_internal_home.css">
-    <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>css/css_portal_findestate.css">
 </head>
 
 <body>
-	<!--  ******************************************    HEADER     ****************************************** -->
+	<!--  ******************************************    HEADER & BACK TO HOME LINK     ****************************************** -->
 	<header class="center-ims">
-	    <h2>Manage properties / images</h2>
+	    <h2>Manage properties / images  &nbsp;&nbsp;&nbsp;
+	    <a style="color:black; font-size:x-small;" href="<?php echo base_url(); ?>Internal_home_controller">[&nbsp;Back to Home&nbsp;]</a></h2>
 	</header>
 	
-	<!--  ******************************************    UPLOAD IMAGE     ****************************************** -->
-	<div align="center" id="upload_image">
-		<?php echo $error;?>
 	
-		<?php echo form_open_multipart('Internal_properties_controller/uploadImages');?>
-		<input type="file" name="userfile" size="20" />
-		<input type="submit" value="upload" />
-	</div>
-
-	
-		<!--  ******************************************    POPULATE SERACH FIELDS     ****************************************** -->
+		<!--  ******************************************    ADD PROPERTY AND SUBMIT    ****************************************** -->
 	
 	<section class="center">
-	<div class="filter">
-			<form >	
-				<p>
-					Price &nbsp;&nbsp;&nbsp; <select name="price" >
-						<option value="0 - 100">Empty for now</option>
-						<option value="100 - 250">Empty for now</option>
-						<option value="250 - 500">Empty for now</option>
-						<option value="500 - 1000000">Empty for now</option>
-						<option value="Any">Empty for now</option>
-					</select>
-				</p>
-				<p>
-					Type &nbsp;&nbsp;&nbsp; <select name="Property Type">
-						<option value="Single-family house">Empty for now</option>
-						<option value="Multi-family house">Empty for now</option>
-						<option value="Apartment">Empty for now</option>
-					</select>
-				</p>
-				<p>
-					Location &nbsp;&nbsp;&nbsp; <select name="Location">
-						<option value="Walnut Creek">Empty for now</option>
-						<option value="Lafayette">Empty for now</option>
-						<option value="Concord">Empty for now</option>
-						<option value="Danville">Empty for now</option>
-						<option value="San Ramon">Empty for now</option>
-					</select>
-				</p>
-				<p>
-					Bedrooms &nbsp;&nbsp;&nbsp; <select name="Bedrooms">
-						<option value="1 +">Empty for now</option>
-						<option value="2 +">Empty for now</option>
-						<option value="3 +">Empty for now</option>
-						<option value="4 +">Empty for now</option>
-						<option value="5 +">Empty for now</option>
-					</select>
-				</p>
-				<p>
-					Bathrooms &nbsp;&nbsp;&nbsp; <select name="Bathrooms">
-						<option value="1 +">Empty for now</option>
-						<option value="2 +">Empty for now</option>
-						<option value="3 +">Empty for now</option>
-						<option value="4 +">Empty for now</option>
-						<option value="5 +">Empty for now</option>
-					</select>
-				</p>
-				<p>
-					Size (sq ft) &nbsp;&nbsp;&nbsp; <select name="size">
-						<option value="600+">Empty for now</option>
-						<option value="1000+">Empty for now</option>
-						<option value="1400+">Empty for now</option>
-						<option value="2000+">Empty for now</option>
-						<option value="3000+">Empty for now</option> 
-						<option value="4000+">Empty for now</option>
-					</select>
-				</p>
-				<p>
-					Year &nbsp;&nbsp;&nbsp; <select name="year">
-						<option value="before 1900">Empty for now</option>
-						<option value="1900+">Empty for now</option>
-						<option value="1930+">Empty for now</option>
-						<option value="1950+">Empty for now</option>
-						<option value="1970+">Empty for now</option>
-						<option value="1990+">Empty for now</option>
-						<option value="2010+">Empty for now</option>
-					</select>
-				</p>
-
-				<input type="submit" value="Search Estates">
-			</form>
-		</div> <!-- form div -->
-		<br>
-		
-		
-				
-		<!-- *****************************    SEARCH RESULTS - FOUND PROPERTIES    *******************************-->
-		<div class="results">
-		
-		<table>
-			<tr>
-			  <th rowspan="4" class="pic_align"><img src="images/1024LenevePl/1LenevePl.jpg" alt="1LenevePl.jpg"></th>
-			  <td class="subrow">1024 Leneve Drive, Walnut Creek, CA</td>
-			</tr>
-			<tr>
-			  <td>$725,000</td>
-			</tr>
-			<tr>
-			  <td>3 bed, 2 full bath, single-family home.</td>
-			</tr>
-			<tr>
-			  <td>FOR SALE</td>
-			</tr>
+		<div align="left" id="container">
+			<!--  ******************************************    SUBMIT PROPERTY FORM     ****************************************** -->
 			
-			<tr>
-			  <th rowspan="4" class="pic_align"><img src="images/1360ContraCostaDr/1ContraCostaDr.jpg" alt="1ContraCostaDr.jpg"></th>
-			  <td class="subrow">936-942 Lexington Ave, Lafayette, CA</td>
-			</tr>
-			<tr>
-			  <td>$430,000</td>
-			</tr>
-			<tr>
-			  <td>3 bed, 2 full bath, apartment in a multi-apartment building. Quiet.</td>
-			</tr>
-			<tr>
-			  <td>FOR SALE</td>
-			</tr>
-			
-			<tr>
-			  <th rowspan="4" class="pic_align"><img src="images/1428NavellierSt/1navellier.jpg" alt="1navellier.jpg"></th>
-			  <td class="subrow">1360 Contra Costa Dr, Lafayette, CA</td>
-			</tr>
-			<tr>
-			  <td>$800,000</td>
-			</tr>
-			<tr>
-			  <td>4 bed, 2 full bath, single-family home.</td>
-			</tr>
-			<tr>
-			  <td>FOR SALE</td>
-			</tr>
-			
-			</table> 
+			<fieldset class="margin">
+			<legend>ADD PROPERTY</legend>
+				<?php
+					// in form_open() specify in parameter the controller that handles validation and (/)
+					// its function that will handle the validation!
+					// otherwise the form resubmits to the same url
+		
+					// attributes to make text box longer for these three textboxes
+					$textbx_length_address = array( 'address', 'size' => '100' );
+					$textbx_length_descrip_sh = array( 'descrip_sh', 'size' => '100' );
+					$textbx_length_desc_lo = array( 'descr_lo', 'size' => '100' );
+		
+					echo form_open ( 'Internal_properties_controller' );
+					echo validation_errors (); // print validation errors if no email or passw or if one of them or both are incorrect
+					echo "<p> Sold: "; echo form_input( 'sold' ); echo " 0-not sold / 1-sold </p>";
+					echo "<p> Type: "; echo form_input ( 'type' ); echo "</p>";
+					echo "<p> Price: "; echo form_input ( 'price' ); echo " $</p>";
+					echo "<p> Bedrooms: "; echo form_input ( 'bedrooms' ); echo "</p>";
+					echo "<p> Bathrooms: "; echo form_input ( 'bathrooms' ); echo "</p>";
+					echo "<p> Size: "; echo form_input ( 'size' ); echo " sq ft</p>";
+					echo "<p> Year: "; echo form_input ( 'year' ); echo "</p>";
+					echo "<p> Location: "; echo form_input ( 'location' ); echo "</p>";
+					echo "<p> Address: "; echo form_input ( $textbx_length_address ); echo "</p>";
+					echo "<p> Short description: "; echo form_input ( $textbx_length_descrip_sh ); echo "</p>";
+					echo "<p> Long description: "; echo form_input ( $textbx_length_desc_lo ); echo "</p>";		
+				?>
+			</fieldset>
+				<?php 
+					echo "<p>"; echo form_submit ( 'submit_property', 'Submit' ); echo "</p>";
+					echo form_close ();
+				?>
 		</div>
-
 	</section>
-	<br><br>
+	<br>
 	
+	<!--  ******************************************    UPLOAD IMAGE     ****************************************** -->
+	
+	<section class="center">
+		<div align="left" id="upload_image">
+			<fieldset class="margin">
+			<legend>UPLOAD IMAGE</legend><br>
+				<?php echo $error;?>
+				<?php echo form_open_multipart('Internal_properties_controller/uploadImages');?>
+				<input type="file" name="userfile" size="20" />
+				<input type="submit" value="Submit" />
+			</fieldset>
+		</div>
+	</section>
+	
+	<!--  ******************************************    DELETE IMAGE     ****************************************** -->
+	
+	<br>
+	<section class="center">
+		<div align="left" id="upload_image">
+			<fieldset class="margin">
+			<legend>DELETE IMAGE</legend><br>
+				<p>Select image by ID to delete.</p>
+			</fieldset>
+		</div>
+	</section>
+	
+	
+	<!--  ******************************************    EDIT PROPERTY     ****************************************** -->
+	
+	<br>
+	<section class="center">
+		<div align="left" id="upload_image">
+			<fieldset class="margin">
+			<legend>EDIT PROPERTY</legend><br>
+				<p>Select property by ID to edit.</p>
+			</fieldset>
+		</div>
+	</section>
+	
+	<!--  ******************************************    DELETE PROPERTY     ****************************************** -->
+	
+	<br>
+	<section class="center">
+		<div align="left" id="upload_image">
+			<fieldset class="margin">
+			<legend>DELETE PROPERTY</legend><br>
+				<p>Select property by ID to delete.</p>
+			</fieldset>
+		</div>
+	</section>
 	
 </body>
 </html>

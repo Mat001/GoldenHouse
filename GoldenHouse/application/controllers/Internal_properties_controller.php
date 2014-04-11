@@ -6,14 +6,8 @@ class Internal_properties_controller extends CI_Controller
 	{
 		$this->load->view ('Internal_properties', array('error' => '' ));
 	}
+	
 
-	
-	// @TODO provide back button
-	
-	
-	
-	
-	
 	// ***********************************     UPLOAD IMAGES     ***********************************************
 	public function uploadImages()
 	{

@@ -88,6 +88,10 @@ a:active {
 	color: #CD950C;
 }
 
+fieldset.margin
+{
+	margin-right: 395px;
+}
 
 
 /* NAVBAR IN INTERNAL PAGES - IMS*/

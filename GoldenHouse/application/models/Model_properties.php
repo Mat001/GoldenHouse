@@ -3,8 +3,27 @@
 class Model_properties extends CI_Model
 {
 	
+	public function setProperty()
+	{
+			
+		
+
+	}
 	
+	public function getProperty()
+	{
+			
+		$query = $this->db->get('properties');
+		return $query->result();
 	
+		// Perform validation???? - if query found the user (only ONE row - one user with this criteria) then return true otherwise false
+		/*
+		if($query->num_rows() == 1)
+		{  return $query->result(); }
+		else
+		{ return ('Database error!'); }
+		*/
+	}
 	
 	
 	

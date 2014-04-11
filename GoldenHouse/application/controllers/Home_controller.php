@@ -12,7 +12,7 @@ class Home_controller extends CI_Controller
 	// index()
 	public function index()
 	{
-		$this->load->view ( 'Portal_home' );	
+		$this->load->view ( 'Portal_home' );
 	}
 	
 	public function terms()
@@ -21,19 +21,23 @@ class Home_controller extends CI_Controller
 	}
 	
 	
+	// create fake scenario that imitate existing functionality and pass it into test function
+	
+	
 	
 	
 	// CALL TEST FUNTIONs FOR HOME CONTROLLER
 	public function testHome_controller()
 	{
-		$this->unit->run ( index(), view('Portal_home'), "test index()" );
-		
+			
 		
 		$this->unit->run ( multiply ( 2, 4 ), 8, "testing_multiply_function" );
 		$this->unit->run ( subtract ( 9, 5 ), 4, "testing_subtract_function" );
 		
 		echo $this->unit->report ();
 	}
+	
+	
 }
 
 
@@ -44,11 +48,6 @@ class Home_controller extends CI_Controller
  * @param unknown $b        	
  * @return number
  */
-
-function add($a, $b)
-{
-	return $a + $b;
-}
 
 function multiply($c, $d)
 {

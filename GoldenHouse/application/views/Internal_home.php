@@ -26,7 +26,6 @@
 		</ul>
     </nav>
 
-
 <!--  ******************************************    CONTENT     ****************************************** -->
 	<div>
 		<h3 align="center">Welcome to agency's internal management system (IMS - information management system).</h3>

@@ -32,13 +32,13 @@ class Login_controller extends CI_Controller
 			$data = array (	'email'	=> $this->input->post('email'), 'is_logged_in' => 1 );
 			$this->session->set_userdata($data);
 			redirect ('Internal_home_controller');	// validation success - enter internal pages (ims)
+			
 		}
 		else 
 		{
 			// if validation fails load the login view again
 			$this->load->view('Portal_login');
 		}
-		
 		
 	} 
 	
@@ -62,6 +62,31 @@ class Login_controller extends CI_Controller
 			return false;
 		}
 	}
+	
+	
+	/**
+	 * UNIT TESTS
+	 */
+	
+	// if validateCredentials is true, then expected result is true. Same for false -- check for logic here
+	function testValidateCredentials()
+	{
+		$this->load->library('unit_test');
+		$validateStatusCanLogin = $this->validateCredentials();
+		
+		$expected;
+		
+		if($validateStatusCanLogin == true) // user is able to login so test will be true
+			$expected = true;	// so will expected result be true
+		else 
+			$expected = false;
+		
+		$this->unit->run($validateStatusCanLogin, $expected, 'validateCredentials test');
+		echo $this->unit->report();
+			
+			
+	}
+	
 	
 }
 ?>
