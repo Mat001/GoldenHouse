@@ -26,30 +26,6 @@
 		</ul>
 	</nav>
 
-	<?php 
-			//print_r($results);
-		?>
-		
-	<?php 
-	
-	foreach ($results as $row)
-	{
-		//echo $row->id;
-		echo $row->sold;
-		echo $row->type;
-		echo $row->price;
-		echo $row->bedrooms;
-		echo $row->bathrooms;
-		echo $row->size;
-		echo $row->year;
-		echo $row->location;
-		echo $row->address;
-		echo $row->descrip_sh;
-		//echo $row->descr_lo;
-		echo "<br><br>";
-	}
-	
-	?>
 											
 	<!--  ******************************************    CENTER SECTION     ****************************************** -->
 	<section class="center">
@@ -58,25 +34,25 @@
 		<!--  ******************************************    SEARCH PARAMETERS     ****************************************** -->
 											
 		<div class="filter">
-			<form >	
+			<form method="post" accept-charset="utf-8" action="<?php echo base_url(); ?>FindEstate_controller/findEstates">	
 				<p>
 					Price &nbsp;&nbsp;&nbsp; <select name="price" >
 						<option value="0 - 100">0 - 100,000</option>
 						<option value="100 - 250">100,000 - 250,000</option>
 						<option value="250 - 500">250,000 - 500,000</option>
 						<option value="500 - 1000000">500,000-1,000,000</option>
-						<option value="Any">Any</option>
+						<option value="1000000+">1,000,000 +</option>
 					</select>
 				</p>
 				<p>
-					Type &nbsp;&nbsp;&nbsp; <select name="Property Type">
+					Type &nbsp;&nbsp;&nbsp; <select name="type">
 						<option value="Residential">Single-family house</option>
 						<option value="Estate">Multi-family house</option>
-						<option value="Mansion">Apartment</option>
+						<option value="Apartment">Apartment</option>
 					</select>
 				</p>
 				<p>
-					Location &nbsp;&nbsp;&nbsp; <select name="Location">
+					Location &nbsp;&nbsp;&nbsp; <select name="location">
 						<option value="Walnut Creek">Walnut Creek</option>
 						<option value="Lafayette">Lafayette</option>
 						<option value="Concord">Concord</option>
@@ -85,7 +61,7 @@
 					</select>
 				</p>
 				<p>
-					Bedrooms &nbsp;&nbsp;&nbsp; <select name="Bedrooms">
+					Bedrooms &nbsp;&nbsp;&nbsp; <select name="bedrooms">
 						<option value="1">1 +</option>
 						<option value="2">2 +</option>
 						<option value="3">3 +</option>
@@ -94,7 +70,7 @@
 					</select>
 				</p>
 				<p>
-					Bathrooms &nbsp;&nbsp;&nbsp; <select name="Bathrooms">
+					Bathrooms &nbsp;&nbsp;&nbsp; <select name="bathrooms">
 						<option value="1">1 +</option>
 						<option value="2">2 +</option>
 						<option value="3">3 +</option>
@@ -126,61 +102,18 @@
 
 				<input type="submit" value="Search Estates">
 			</form>
-		</div> <!-- form div -->
+		</div> 
 		<br>
-		
 		
 				
 		<!-- *****************************    SEARCH RESULTS - FOUND PROPERTIES    *******************************-->
-		<div class="results">
+		<div class="image">
+			<h2>FIND YOUR DREAM HOME</h2>
 		
-		<table>
-			<tr>
-			  <th rowspan="4" class="pic_align"><img src="images/1024LenevePl/1LenevePl.jpg" alt="1LenevePl.jpg"></th>
-			  <td class="subrow">1024 Leneve Drive, Walnut Creek, CA</td>
-			</tr>
-			<tr>
-			  <td>$725,000</td>
-			</tr>
-			<tr>
-			  <td>3 bed, 2 full bath, single-family home.</td>
-			</tr>
-			<tr>
-			  <td>FOR SALE</td>
-			</tr>
-			
-			<tr>
-			  <th rowspan="4" class="pic_align"><img src="images/1360ContraCostaDr/1ContraCostaDr.jpg" alt="1ContraCostaDr.jpg"></th>
-			  <td class="subrow">936-942 Lexington Ave, Lafayette, CA</td>
-			</tr>
-			<tr>
-			  <td>$430,000</td>
-			</tr>
-			<tr>
-			  <td>3 bed, 2 full bath, apartment in a multi-apartment building. Quiet.</td>
-			</tr>
-			<tr>
-			  <td>FOR SALE</td>
-			</tr>
-			
-			<tr>
-			  <th rowspan="4" class="pic_align"><img src="images/1428NavellierSt/1navellier.jpg" alt="1navellier.jpg"></th>
-			  <td class="subrow">1360 Contra Costa Dr, Lafayette, CA</td>
-			</tr>
-			<tr>
-			  <td>$800,000</td>
-			</tr>
-			<tr>
-			  <td>4 bed, 2 full bath, single-family home.</td>
-			</tr>
-			<tr>
-			  <td>FOR SALE</td>
-			</tr>
-			
-			</table> 
+			<img src="images/homepage2_img.jpg" alt="FindEstate image of a house, homepage2_img.jpg">
 		</div>
-
 	</section>
+
 	<br><br>
 	
 	<!-- *****************************    FOOTER    *******************************-->

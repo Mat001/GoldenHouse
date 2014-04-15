@@ -28,14 +28,9 @@
 					// in form_open() specify in parameter the controller that handles validation and (/)
 					// its function that will handle the validation!
 					// otherwise the form resubmits to the same url
-		
-					// attributes to make text box longer for these three textboxes
-					$textbx_length_address = array( 'address', 'size' => '100' );
-					$textbx_length_descrip_sh = array( 'descrip_sh', 'size' => '100' );
-					$textbx_length_desc_lo = array( 'descr_lo', 'size' => '100' );
-		
-					echo form_open ( 'Internal_properties_controller' );
-					echo validation_errors (); // print validation errors if no email or passw or if one of them or both are incorrect
+				
+					echo form_open ( 'Internal_properties_controller/insertProp' );
+					echo validation_errors (); // print validation errors 
 					echo "<p> Sold: "; echo form_input( 'sold' ); echo " 0-not sold / 1-sold </p>";
 					echo "<p> Type: "; echo form_input ( 'type' ); echo "</p>";
 					echo "<p> Price: "; echo form_input ( 'price' ); echo " $</p>";
@@ -44,13 +39,13 @@
 					echo "<p> Size: "; echo form_input ( 'size' ); echo " sq ft</p>";
 					echo "<p> Year: "; echo form_input ( 'year' ); echo "</p>";
 					echo "<p> Location: "; echo form_input ( 'location' ); echo "</p>";
-					echo "<p> Address: "; echo form_input ( $textbx_length_address ); echo "</p>";
-					echo "<p> Short description: "; echo form_input ( $textbx_length_descrip_sh ); echo "</p>";
-					echo "<p> Long description: "; echo form_input ( $textbx_length_desc_lo ); echo "</p>";		
+					echo "<p> Address: "; echo form_input ( 'address' ); echo "</p>";
+					echo "<p> Short description: "; echo form_input ( 'descrip_sh' ); echo "</p>";
+					echo "<p> Long description: "; echo form_input ( 'descr_lo' ); echo "</p>";		
 				?>
 			</fieldset>
 				<?php 
-					echo "<p>"; echo form_submit ( 'submit_property', 'Submit' ); echo "</p>";
+					echo "<p>"; echo form_submit ( 'submt', 'Submit' ); echo "</p>";
 					echo form_close ();
 				?>
 		</div>

@@ -7,7 +7,15 @@ class Internal_properties_controller extends CI_Controller
 		$this->load->view ('Internal_properties', array('error' => '' ));
 	}
 	
+	// insert new property
+	public function insertProp()
+	{
+		$this->load->model("Model_properties");
+		$result = $this->Model_properties->insertProperty();
+	}
+	
 
+		
 	// ***********************************     UPLOAD IMAGES     ***********************************************
 	public function uploadImages()
 	{
