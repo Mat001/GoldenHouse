@@ -7,11 +7,27 @@ class Internal_properties_controller extends CI_Controller
 		$this->load->view ('Internal_properties', array('error' => '' ));
 	}
 	
-	// insert new property
+	// Get new property info from view (Internal_properties) and pass it onto the model (Model_properties)
 	public function insertProp()
 	{
+		$image_path = $this->input->post('image_path');
+		$sold = $this->input->post('sold');
+		$type = $this->input->post('type');
+		$price = $this->input->post('price');
+		$bedrooms = $this->input->post('bedrooms');
+		$bathrooms = $this->input->post('bathrooms');
+		$size = $this->input->post('size');
+		$year = $this->input->post('year');
+		$location = $this->input->post('location');
+		$address = $this->input->post('address');
+		$descrip_sh = $this->input->post('descrip_sh');
+		$descr_lo = $this->input->post('descr_lo');
+		
 		$this->load->model("Model_properties");
-		$result = $this->Model_properties->insertProperty();
+		$result = $this->Model_properties->insertPropertyToDb($image_path, $sold, $type, $price, $bedrooms, $bathrooms, 
+															$size, $year, $location, $address, $descrip_sh, $descr_lo);
+		$this->load->view('success_property_added');
+		
 	}
 	
 

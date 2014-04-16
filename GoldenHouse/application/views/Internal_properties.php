@@ -1,3 +1,5 @@
+<?php require('application/controllers/FindEstate_controller.php'); ?>
+
 <!DOCTYPE (HTML)>
 
 <html>
@@ -31,6 +33,7 @@
 				
 					echo form_open ( 'Internal_properties_controller/insertProp' );
 					echo validation_errors (); // print validation errors 
+					echo "<p> Image path: "; echo form_input( 'image_path' ); 
 					echo "<p> Sold: "; echo form_input( 'sold' ); echo " 0-not sold / 1-sold </p>";
 					echo "<p> Type: "; echo form_input ( 'type' ); echo "</p>";
 					echo "<p> Price: "; echo form_input ( 'price' ); echo " $</p>";
@@ -40,8 +43,8 @@
 					echo "<p> Year: "; echo form_input ( 'year' ); echo "</p>";
 					echo "<p> Location: "; echo form_input ( 'location' ); echo "</p>";
 					echo "<p> Address: "; echo form_input ( 'address' ); echo "</p>";
-					echo "<p> Short description: "; echo form_input ( 'descrip_sh' ); echo "</p>";
-					echo "<p> Long description: "; echo form_input ( 'descr_lo' ); echo "</p>";		
+					echo "<p> Short description: "; echo form_textarea ( 'descrip_sh' ); echo "</p>";
+					echo "<p> Long description: "; echo form_textarea ( 'descr_lo' ); echo "</p>";		
 				?>
 			</fieldset>
 				<?php 
@@ -87,6 +90,34 @@
 			<fieldset class="margin">
 			<legend>EDIT PROPERTY</legend><br>
 				<p>Select property by ID to edit.</p>
+				
+				<!-- DROPDOWN with all properties -->
+				<!-- 
+				<form method="post" accept-charset="utf-8" action="<?//php echo base_url(); ?>FindEstate_controller/findEstates">
+				
+				
+				<?php //foreach ($results as $row)
+				//{ ?>
+				
+				<select name="allProperties">
+					<option value="id">
+					<//?php 
+					echo $row->id;
+					if($row->sold == 0) {echo '<span>FOR SALE</span>';} else { echo '<span>SOLD</span>';}
+					echo $row->type;
+					echo $row->size;
+					echo $row->year;
+					echo $row->location;
+					echo $row->address;
+					?>
+					
+					</option>
+					
+				</select>
+				<?php //} ?>
+			</form>
+			 -->
+			
 			</fieldset>
 		</div>
 	</section>

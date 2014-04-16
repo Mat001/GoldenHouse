@@ -3,13 +3,6 @@
 class Model_properties extends CI_Model
 {
 	
-	public function setProperty()
-	{
-			
-		
-
-	}
-	
 	public function getProperty()
 	{
 			
@@ -25,28 +18,25 @@ class Model_properties extends CI_Model
 		*/
 	}
 	
-	// insert new property into properties table in DB
-	
-	
-	// USE TIS: https://www.youtube.com/watch?v=lcpCFrjAiCw   !!!!!!!!!!!!!!!!!!!!!
-	public function insertProperty()
+	// insert new property into properties table in DB. I used this source: https://www.youtube.com/watch?v=lcpCFrjAiCw
+	public function insertPropertyToDb($image_path, $sold, $type, $price, $bedrooms, $bathrooms, 
+									$size, $year, $location, $address, $descrip_sh, $descr_lo)
 	{
-		$sold = $this->input->post('sold');
-		$type = $this->input->post('type');
-		$price = $this->input->post('price');
-		$bedrooms = $this->input->post('bedrooms');
-		$bathrooms = $this->input->post('bathrooms');
-		$size = $this->input->post('size');
-		$year = $this->input->post('year');
-		$location = $this->input->post('location');
-		$address = $this->input->post('address');
-		$descrip_sh = $this->input->post('descrip_sh');
-		$descr_lo = $this->input->post('descr_lo');
+		$this->db->set('image_path', $image_path);
+		$this->db->set('sold', $sold);
+		$this->db->set('type', $type);
+		$this->db->set('price', $price);
+		$this->db->set('bedrooms', $bedrooms);
+		$this->db->set('bathrooms', $bathrooms);
+		$this->db->set('size', $size);
+		$this->db->set('year', $year);
+		$this->db->set('location', $location);
+		$this->db->set('address', $address);
+		$this->db->set('descrip_sh', $descrip_sh);
+		$this->db->set('descr_lo', $descr_lo);
 		
-		$data = array( $sold, $type, $price, $bedrooms, $bathrooms, $size, $year, $location, $address, $descrip_sh, $descr_lo);
-		
-		$this->db->insert("properties", $data);
-		$result = $this->db->query($data);
+		$query = $this->db->insert('properties');
+		return;
 	}
 	
 	

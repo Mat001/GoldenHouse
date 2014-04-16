@@ -45,8 +45,8 @@
 		{
 		?>
 			<table>
-				<tr>
-				  <th rowspan="4" class="pic_align"><img src="images/1024LenevePl/1LenevePl.jpg" alt="1LenevePl.jpg"></th>
+				<tr> <!-- fetch image path from database and use it to open the corresponding image file -->
+				  <th rowspan="4" class="pic_align"><img src="<?php echo base_url().($row->image_path) ?>" alt="<?php echo base_url().($row->image_path) ?>"></th>
 				  <td class="subrow"><?php echo $row->address;?></td>
 				</tr>
 				<tr>
