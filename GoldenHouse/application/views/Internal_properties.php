@@ -45,6 +45,7 @@
 					echo "<p> Address: "; echo form_input ( 'address' ); echo "</p>";
 					echo "<p> Short description: "; echo form_textarea ( 'descrip_sh' ); echo "</p>";
 					echo "<p> Long description: "; echo form_textarea ( 'descr_lo' ); echo "</p>";		
+					echo "<p> Floor plan path: "; echo form_input ( 'floor_plan_path' ); echo "</p>";
 				?>
 			</fieldset>
 				<?php 

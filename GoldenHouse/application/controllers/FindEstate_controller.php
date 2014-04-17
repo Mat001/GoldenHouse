@@ -12,6 +12,18 @@ class FindEstate_controller extends CI_Controller
 		$this->load->view('Portal_estateListing');
 	}
 	
+	public function estateDetails()
+	{
+		$this->load->model('Model_properties');
+		$data['results'] = $this->Model_properties->getProperty();  // $results is one row in properties table, $data is the whole table (ultidimens array)
+		$this->load->view('Portal_estateDetails', $data);
+		
+		$this->load->model('Model_properties');
+		$data['results_images'] = $this->Model_properties->getPropertyImages(); 
+		$this->load->view('Portal_estateDetails', $data);
+		
+	}
+	
 	public function findEstates()
 	{
 		// logic to search for estates - compare selected parameters to database
@@ -30,6 +42,8 @@ class FindEstate_controller extends CI_Controller
 		$this->load->model('Model_properties');
 		$data['results'] = $this->Model_properties->getProperty();  // $results is one row in properties table, $data is the whole table (ultidimens array)
 		$this->load->view('Portal_estateListing', $data);
+		
+		
 		
 		/*
 		 // loop through elements in the array and compare them to values in each row at a time in "properties" table

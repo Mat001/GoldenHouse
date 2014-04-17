@@ -22,6 +22,7 @@ class Internal_properties_controller extends CI_Controller
 		$address = $this->input->post('address');
 		$descrip_sh = $this->input->post('descrip_sh');
 		$descr_lo = $this->input->post('descr_lo');
+		$floor_plan = $this->input->post('floor_plan_path');
 		
 		$this->load->model("Model_properties");
 		$result = $this->Model_properties->insertPropertyToDb($image_path, $sold, $type, $price, $bedrooms, $bathrooms, 

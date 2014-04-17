@@ -8,7 +8,7 @@ class Model_properties extends CI_Model
 			
 		$query = $this->db->get('properties');
 		return $query->result();
-	
+			
 		// Perform validation???? - if query found the user (only ONE row - one user with this criteria) then return true otherwise false
 		/*
 		if($query->num_rows() == 1)
@@ -16,6 +16,12 @@ class Model_properties extends CI_Model
 		else
 		{ return ('Database error!'); }
 		*/
+	}
+	
+	public function getPropertyImages()
+	{
+		$query = $this->db->get('images');
+		return $query->result();
 	}
 	
 	// insert new property into properties table in DB. I used this source: https://www.youtube.com/watch?v=lcpCFrjAiCw
