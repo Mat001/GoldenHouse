@@ -18,9 +18,11 @@ class FindEstate_controller extends CI_Controller
 		$data['results'] = $this->Model_properties->getProperty();  // $results is one row in properties table, $data is the whole table (ultidimens array)
 		$this->load->view('Portal_estateDetails', $data);
 		
-		$this->load->model('Model_properties');
-		$data['results_images'] = $this->Model_properties->getPropertyImages(); 
-		$this->load->view('Portal_estateDetails', $data);
+		
+		
+		//$this->load->model('Model_properties');
+		//$data['results_images'] = $this->Model_properties->getPropertyImages(); 
+		//$this->load->view('Portal_estateDetails', $data);
 		
 	}
 	

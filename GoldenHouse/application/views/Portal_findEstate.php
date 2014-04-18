@@ -37,17 +37,17 @@
 			<form method="post" accept-charset="utf-8" action="<?php echo base_url(); ?>FindEstate_controller/findEstates">	
 				<p>
 					Price &nbsp;&nbsp;&nbsp; <select name="price" >
-						<option value="0 - 100">0 - 100,000</option>
-						<option value="100 - 250">100,000 - 250,000</option>
-						<option value="250 - 500">250,000 - 500,000</option>
-						<option value="500 - 1000000">500,000-1,000,000</option>
-						<option value="1000000+">1,000,000 +</option>
+						<option value="0">0 - 100,000</option>
+						<option value="100">100,000 - 250,000</option>
+						<option value="250">250,000 - 500,000</option>
+						<option value="500">500,000-1,000,000</option>
+						<option value="1000">1,000,000 +</option>
 					</select>
 				</p>
 				<p>
 					Type &nbsp;&nbsp;&nbsp; <select name="type">
-						<option value="Residential">Single-family house</option>
-						<option value="Estate">Multi-family house</option>
+						<option value="Single-family house">Single-family house</option>
+						<option value="Multi-family house">Multi-family house</option>
 						<option value="Apartment">Apartment</option>
 					</select>
 				</p>
@@ -56,10 +56,11 @@
 						<option value="Walnut Creek">Walnut Creek</option>
 						<option value="Lafayette">Lafayette</option>
 						<option value="Concord">Concord</option>
-						<option value="Danville">Danville</option>
+						<option value="Richmond">Richmond</option>
 						<option value="San Ramon">San Ramon</option>
 					</select>
 				</p>
+				<!-- 
 				<p>
 					Bedrooms &nbsp;&nbsp;&nbsp; <select name="bedrooms">
 						<option value="1">1 +</option>
@@ -98,9 +99,10 @@
 						<option value="1990+">1990+</option>
 						<option value="2010+">2010+</option>
 					</select>
-				</p>
-
+				</p>  -->
+				
 				<input type="submit" value="Search Estates">
+				
 			</form>
 		</div> 
 		<br>

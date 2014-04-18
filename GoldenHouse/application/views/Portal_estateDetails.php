@@ -33,8 +33,7 @@
 	<div class="filter">
 		<!-- <a style="color:black; font-size:small;" href="<?//php echo base_url(); ?>FindEstate_controller/estateListing">&nbsp;Back to listings&nbsp;</a> --> 
 		<!-- Simulate back button with jvascript. I didn't know at this point how to do it properly - to put URL to go back to property listings 
-		to retain listings data -->
-		<!-- Would probably need to use sessions -->
+		to retain listings data --><!-- Would probably need to use sessions -->
 		<a style="color:black; font-size:small;" href="Portal_estateListing.php" onClick="history.back();return false;">&nbsp;Back to listings&nbsp;</a> 
 	</div>
 	<br>	
@@ -46,36 +45,31 @@
 		$property_id = $_POST['prop_id']; ?>
 		
 		<?php 
+		$duplicate = 0;
 		foreach ($results as $row)
 		{ 
 			// display details only of that property of which id matches the property_id from clicked property on previous page (listings)
+			// display images of that property
 			if($property_id == $row->prop_id)
 			{
+				if($row->prop_id !== $duplicate)
+				{
 				?>
-				<h3>Property details</h3><br>
-				<p>Address   |   <?php echo $row->address; ?></p>
-				<p>Type   |   <?php echo $row->type; ?></p>
-				<p>Size   |   <?php echo $row->size; ?> sq ft</p>
-				<p>Year   |   <?php echo $row->year; ?></p>
-				<p>Additional details</p><?php echo $row->descr_lo; ?>
-				<p>Floor plan</p><img src="<?php echo base_url().($row->floor_plan_path) ?>" alt="<?php echo base_url().($row->floor_plan_path) ?>">
-			<?php }
+					<h3>Property details</h3><br>
+					<p>Address   |   <?php echo $row->address; ?></p>
+					<p>Type   |   <?php echo $row->type; ?></p>
+					<p>Size   |   <?php echo $row->size; ?> sq ft</p>
+					<p>Year   |   <?php echo $row->year; ?></p>
+					<p>Additional details</p><?php echo $row->descr_lo; ?>
+					<p>Floor plan</p><img src="<?php echo base_url().($row->floor_plan_path) ?>" alt="<?php echo base_url().($row->floor_plan_path) ?>">
+				<?php 
+				} ?>
+				<img src="<?php echo base_url().($row->img_path) ?>" alt="<?php echo ($row->img_path) ?>">
+			
+			<?php $duplicate= $row->prop_id;
+			}
 		} ?>	
 	
-			 
-		<!-- show images -->
-		<p>Images</p><br>
-		<?php 
-		foreach ($results_images as $row)
-		{ 
-			// display details only of that property of which id matches the property_id from clicked property on previous page (listings)
-			if($property_id == $row->prop_id)
-			{
-			?>
-				<img src="<?php echo base_url().($row->img_path) ?>" alt="<?php echo base_url().($row->img_path) ?>">
-			<?php }
-		} ?>	
-			 
 		</div>
 	</section>
 	<br><br>

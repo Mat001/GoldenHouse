@@ -6,9 +6,17 @@ class Model_properties extends CI_Model
 	public function getProperty()
 	{
 			
-		$query = $this->db->get('properties');
+		//$query = $this->db->get('properties');
+		//return $query->result();
+		
+		$this->db->select('*');
+		$this->db->from('properties');
+		$this->db->join('images', 'properties.prop_id = images.p_id', 'left');
+		$this->db->order_by("properties.prop_id", "asc");
+		
+		$query = $this->db->get();
 		return $query->result();
-			
+		
 		// Perform validation???? - if query found the user (only ONE row - one user with this criteria) then return true otherwise false
 		/*
 		if($query->num_rows() == 1)
