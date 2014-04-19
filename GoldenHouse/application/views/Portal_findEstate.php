@@ -37,6 +37,7 @@
 			<form method="post" accept-charset="utf-8" action="<?php echo base_url(); ?>FindEstate_controller/findEstates">	
 				<p>
 					Price &nbsp;&nbsp;&nbsp; <select name="price" >
+						<option value="--">--</option>
 						<option value="0">0 - 100,000</option>
 						<option value="100">100,000 - 250,000</option>
 						<option value="250">250,000 - 500,000</option>
@@ -46,6 +47,7 @@
 				</p>
 				<p>
 					Type &nbsp;&nbsp;&nbsp; <select name="type">
+						<option value="--">--</option>
 						<option value="Single-family house">Single-family house</option>
 						<option value="Multi-family house">Multi-family house</option>
 						<option value="Apartment">Apartment</option>
@@ -53,6 +55,7 @@
 				</p>
 				<p>
 					Location &nbsp;&nbsp;&nbsp; <select name="location">
+						<option value="--">--</option>
 						<option value="Walnut Creek">Walnut Creek</option>
 						<option value="Lafayette">Lafayette</option>
 						<option value="Concord">Concord</option>
