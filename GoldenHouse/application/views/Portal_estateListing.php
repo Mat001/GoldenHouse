@@ -56,11 +56,11 @@
 			// if price is 500 the search for all properties with price 500 - 1000000
 			// if price is 1000 the search for all properties with price > 1000000
 			if($row->price >= 0 && $row->price <= 100000 && $price_prev == "0") { $ar_prices[] = $row->prop_id; }
-			if($row->price >= 100001 && $row->price <= 250000 && $price_prev == "100") { $ar_prices[] = $row->prop_id; }
+			if($row->price >= 100001 && $row->price <= 250000 && $price_prev == "100") { $ar_prices[] = $row->prop_id; } 
 			if($row->price >= 250001 && $row->price <= 500000 && $price_prev == "250") { $ar_prices[] = $row->prop_id; }	
 			if($row->price >= 500001 && $row->price <= 1000000 && $price_prev == "500") { $ar_prices[] = $row->prop_id; }
 			if($row->price >= 1000001  && $price_prev == "1000") {  $ar_prices[] = $row->prop_id; }	
-			
+	
 			// types
 			// if type is Single-family house the search for all properties with type Single-family house
 			// if type is Multi-family house the search for all properties with type Multi-family house
@@ -68,22 +68,25 @@
 			if($row->type == "Single-family house" && $type_prev == "Single-family house") { $ar_types[] = $row->prop_id; }
 			if($row->type == "Multi-family house" && $type_prev == "Multi-family house") { $ar_types[] = $row->prop_id; }
 			if($row->type == "Apartment" && $type_prev == "Apartment") { $ar_types[] = $row->prop_id; }
-			
+		
 			// locations
 			// if location is Walnut Creek the search for all properties with locagtion is Walnut Creek
 			// if location is Lafayette the search for all properties with location is Lafayette
 			// if location is Concord the search for all properties with location is Concord
 			// if location is Richmond the search for all properties with location is Richmond
 			// if location is San Ramon the search for all properties with location is San Ramon
-			if($row->location == "Walnut Creek" && $location_prev == "Walnut Creek") { $ar_locations[] = $row->prop_id; }
+			if($row->location == "Walnut Creek" && $location_prev == "Walnut Creek") { $ar_locations[] = $row->prop_id;}
 			if($row->location == "Lafayette" && $location_prev == "Lafayette") { $ar_locations[] = $row->prop_id; }
 			if($row->location == "Concord" && $location_prev == "Concord") { $ar_locations[] = $row->prop_id; }
 			if($row->location == "Richmond" && $location_prev == "Richmond") { $ar_locations[] = $row->prop_id; }
 			if($row->location == "San Ramon" && $location_prev == "San Ramon") { $ar_locations[] = $row->prop_id; }
 		}
 		
-		// if array of prices is empty
-		if (empty($ar_prices) && !empty($ar_types) && !empty($ar_locations)) { $ar = array_merge($ar_types, $ar_locations); }
+		// only price provided
+		if (!empty($ar_prices) && empty($ar_types) && empty($ar_locations)) { $ar = $ar_prices; }
+		
+		// type provided
+		if (empty($ar_prices) && !empty($ar_types) && empty($ar_locations)) { $ar = $ar_types; }
 		
 		// only locations selected
 		if (empty($ar_prices) && empty($ar_types) && !empty($ar_locations)) { $ar = $ar_locations; }
@@ -92,19 +95,43 @@
 		if (empty($ar_prices) && empty($ar_types) && empty($ar_locations)) { /* do nothing or diaplay message - no parameters selected */ }
 		
 		// all three parameters selected
-		if (!empty($ar_prices) && !empty($ar_types) && !empty($ar_locations)) { $ar = array_merge($ar_prices, $ar_types, $ar_locations); }
+		if (!empty($ar_prices) && !empty($ar_types) && !empty($ar_locations)) 
+		{ 
+			$ar_temp = array_intersect($ar_prices, $ar_types, $ar_locations);
+			$ar_temp = array_values($ar_temp);
+			if (!empty($ar_temp)) { $ar = $ar_temp; }
+		}
 		
-		// price and type provided
-		if (!empty($ar_prices) && !empty($ar_types) && empty($ar_locations)) { $ar = array_merge($ar_prices, $ar_types); }
+		// price and type provided // ar_prices=2, ar_types=1,3
+		if (!empty($ar_prices) && !empty($ar_types) && empty($ar_locations)) 
+		{	 
+			// if elements in array1 and in array2 intersect - elements that appear in both arrays
+			// then put intersecting elements into the $ar
+			$ar_temp = array_intersect($ar_prices, $ar_types);
+			$ar_temp = array_values($ar_temp);
+			if (!empty($ar_temp)) { $ar = $ar_temp; }
+			// add else echo 'No found.';
+		}
 		
-		// type provided
-		if (empty($ar_prices) && !empty($ar_types) && empty($ar_locations)) { $ar = array_merge($ar_types); }
-		
-		// only price provided
-		if (!empty($ar_prices) && empty($ar_types) && empty($ar_locations)) { $ar = array_merge($ar_prices); }
+		// type and location provided
+		if (empty($ar_prices) && !empty($ar_types) && !empty($ar_locations))
+		{
+			// if elements in array1 and in array2 intersect - elements that appear in both arrays
+			// then put intersecting elements into the $ar
+			sort($ar_types);
+			sort($ar_locations);
+			$ar_temp = array_intersect($ar_types, $ar_locations);
+			$ar_temp = array_values($ar_temp);	// IMPORTANT STEP !!!! efore was also getting undefined values in the array. It cleans up, removes undefined values.
+			if (!empty($ar_temp)) { $ar = $ar_temp; }
+		}
 		
 		// price and location provided
-		if (!empty($ar_prices) && empty($ar_types) && !empty($ar_locations)) { $ar = array_merge($ar_prices, $ar_locations); }
+		if (!empty($ar_prices) && empty($ar_types) && !empty($ar_locations)) 
+		{
+			$ar_temp = array_intersect($ar_prices, $ar_locations);
+			$ar_temp = array_values($ar_temp);
+			if (!empty($ar_temp)) { $ar = $ar_temp; } 
+		}
 			
 		$arrlength=count($ar);	// get array length to use it for loop
 		?>
