@@ -56,12 +56,13 @@
 				{
 				?>
 					<h3>Property details</h3><br>
-					<p>Address   |   <?php echo $row->address; ?></p>
-					<p>Type   |   <?php echo $row->type; ?></p>
-					<p>Size   |   <?php echo $row->size; ?> sq ft</p>
-					<p>Year   |   <?php echo $row->year; ?></p>
-					<p>Additional details</p><?php echo $row->descr_lo; ?>
+					<p>Address | <span style="font-weight: lighter; font-size: small;"><?php echo $row->address; ?></span></p>
+					<p>Type   |   <span style="font-weight: lighter; font-size: small;"><?php echo $row->type; ?></span></p>
+					<p>Size   |   <span style="font-weight: lighter; font-size: small;"><?php echo $row->size; ?> sq ft</span></p>
+					<p>Year   |   <span style="font-weight: lighter; font-size: small;"><?php echo $row->year; ?></span></p>
+					<br><p>Additional description</p><span style="font-weight: lighter; font-size: small;"><?php echo $row->descr_lo; ?></span>
 					<p>Floor plan</p><img src="<?php echo base_url().($row->floor_plan_path) ?>" alt="<?php echo base_url().($row->floor_plan_path) ?>">
+					<p>Images</p>
 				<?php 
 				} ?>
 				<img src="<?php echo base_url().($row->img_path) ?>" alt="<?php echo ($row->img_path) ?>">

@@ -2,13 +2,9 @@
 
 class Model_properties extends CI_Model
 {
-	
+	// et properties from 'properties' table joined with 'images' table
 	public function getProperty()
 	{
-			
-		//$query = $this->db->get('properties');
-		//return $query->result();
-		
 		$this->db->select('*');
 		$this->db->from('properties');
 		$this->db->join('images', 'properties.prop_id = images.p_id', 'left');
@@ -53,20 +49,37 @@ class Model_properties extends CI_Model
 		return;
 	}
 	
-	
-	
-	public function getImages()
+	// ONLY from 'properties' table - no joins
+	public function getPropertyOnly()
 	{
+		$this->db->select('*');
+		$this->db->from('properties');
+		$this->db->order_by("prop_id", "asc");
 		
-		
+		$query = $this->db->get();
+		return $query->result();;
 	}
 	
-	//  @TODO DO LATER FOR UPLOADING IMAGES INTO SHOW ROOM
-	public function doUpload()
+	public function updatePropertyInDb($image_path, $sold, $type, $price, $bedrooms, $bathrooms,
+			$size, $year, $location, $address, $descrip_sh, $descr_lo)
 	{
-		// see: http://code.tutsplus.com/tutorials/codeigniter-from-scratch-file-uploading-and-image-manipulation--net-9452
+		$this->db->set('image_path', $image_path);
+		$this->db->set('sold', $sold);
+		$this->db->set('type', $type);
+		$this->db->set('price', $price);
+		$this->db->set('bedrooms', $bedrooms);
+		$this->db->set('bathrooms', $bathrooms);
+		$this->db->set('size', $size);
+		$this->db->set('year', $year);
+		$this->db->set('location', $location);
+		$this->db->set('address', $address);
+		$this->db->set('descrip_sh', $descrip_sh);
+		$this->db->set('descr_lo', $descr_lo);
 	
-	}	
+		$query = $this->db->update('properties');  // or $query = $this->db->update('properties', $data, "prop_id"=smth);
+		return;
+	}
+	
 }
 
 

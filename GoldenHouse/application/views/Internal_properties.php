@@ -45,80 +45,45 @@
 					echo "<p> Address: "; echo form_input ( 'address' ); echo "</p>";
 					echo "<p> Short description: "; echo form_textarea ( 'descrip_sh' ); echo "</p>";
 					echo "<p> Long description: "; echo form_textarea ( 'descr_lo' ); echo "</p>";		
-					echo "<p> Floor plan path: "; echo form_input ( 'floor_plan_path' ); echo "</p>";
+					echo "<p> Floor plan path: "; echo form_input ( 'floor_plan_path' ); echo "</p>"; 
 				?>
 			</fieldset>
 				<?php 
-					echo "<p>"; echo form_submit ( 'submt', 'Submit' ); echo "</p>";
+					echo "<p>"; echo form_submit ( 'submit', 'Submit' ); echo "</p>";
 					echo form_close ();
 				?>
 		</div>
 	</section>
 	<br>
 	
-	<!--  ******************************************    UPLOAD IMAGE     ****************************************** -->
-	
-	<section class="center">
-		<div align="left" id="upload_image">
-			<fieldset class="margin">
-			<legend>UPLOAD IMAGE</legend><br>
-				<?php echo $error;?>
-				<?php echo form_open_multipart('Internal_properties_controller/uploadImages');?>
-				<input type="file" name="userfile" size="20" />
-				<input type="submit" value="Submit" />
-			</fieldset>
-		</div>
-	</section>
-	
-	<!--  ******************************************    DELETE IMAGE     ****************************************** -->
-	
-	<br>
-	<section class="center">
-		<div align="left" id="upload_image">
-			<fieldset class="margin">
-			<legend>DELETE IMAGE</legend><br>
-				<p>Select image by ID to delete.</p>
-			</fieldset>
-		</div>
-	</section>
-	
-	
 	<!--  ******************************************    EDIT PROPERTY     ****************************************** -->
 	
 	<br>
 	<section class="center">
-		<div align="left" id="upload_image">
+		<div align="left" id="edit property">
 			<fieldset class="margin">
-			<legend>EDIT PROPERTY</legend><br>
-				<p>Select property by ID to edit.</p>
+			<legend>EDIT PROPERTY</legend>
+				<p>Select property to edit.</p>
+
+				<form method="post" accept-charset="utf-8" action="<?php echo base_url(); ?>Internal_properties_controller/goToEditProperties">
+				<p>
+					<select name="property" >
+						<?php 
+						
+						foreach ($results as $row)
+						{ ?>
+							<option >
+							<?php 
+							echo 'id'.$row->prop_id.', '; echo $row-> sold.', '; echo $row->type.', '; echo '$'.$row->price.', '; 
+							echo $row->size.'sqf, '; echo $row->year.', '; echo $row->address;
+							?>
+							</option>
+						<?php } ?>	
+					</select>
+				</p>
+				<input type="submit" value="Select">
+				</form>
 				
-				<!-- DROPDOWN with all properties -->
-				<!-- 
-				<form method="post" accept-charset="utf-8" action="<?//php echo base_url(); ?>FindEstate_controller/findEstates">
-				
-				
-				<?php //foreach ($results as $row)
-				//{ ?>
-				
-				<select name="allProperties">
-					<option value="id">
-					<//?php 
-					echo $row->id;
-					if($row->sold == 0) {echo '<span>FOR SALE</span>';} else { echo '<span>SOLD</span>';}
-					echo $row->type;
-					echo $row->size;
-					echo $row->year;
-					echo $row->location;
-					echo $row->address;
-					?>
-					
-					</option>
-					
-				</select>
-				<?php //} ?>
-			</form>
-			 -->
-			
 			</fieldset>
 		</div>
 	</section>
@@ -127,10 +92,29 @@
 	
 	<br>
 	<section class="center">
-		<div align="left" id="upload_image">
+		<div align="left" id="delete property">
 			<fieldset class="margin">
-			<legend>DELETE PROPERTY</legend><br>
-				<p>Select property by ID to delete.</p>
+			<legend>DELETE PROPERTY</legend>
+				<p>Select property to delete.</p>
+				
+		 		<form method="delete" accept-charset="utf-8" action="<?php echo base_url(); ?>Internal_properties_controller">	
+				<p>
+					<select name="property" >
+						<?php 
+						foreach ($results as $row)
+						{ ?>
+							<option value="selected">
+							<?php 
+							echo 'id'.$row->prop_id.', '; echo $row-> sold.', '; echo $row->type.', '; echo '$'.$row->price.', '; 
+							echo $row->size.'sqf, '; echo $row->year.', '; echo $row->address;
+							?>
+							</option>
+						<?php } ?>	
+					</select>
+				</p>
+				<input type="submit" value="Delete">
+				
+				</form>
 			</fieldset>
 		</div>
 	</section>

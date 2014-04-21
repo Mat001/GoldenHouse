@@ -36,7 +36,7 @@
 		<div class="filter">
 			<form method="post" accept-charset="utf-8" action="<?php echo base_url(); ?>FindEstate_controller/findEstates">	
 				<p>
-					Price &nbsp;&nbsp;&nbsp; <select name="price" >
+					Price &nbsp;&nbsp;&nbsp; $<select name="price" >
 						<option value="--">--</option>
 						<option value="0">0 - 100,000</option>
 						<option value="100">100,000 - 250,000</option>
@@ -63,47 +63,6 @@
 						<option value="San Ramon">San Ramon</option>
 					</select>
 				</p>
-				<!-- 
-				<p>
-					Bedrooms &nbsp;&nbsp;&nbsp; <select name="bedrooms">
-						<option value="1">1 +</option>
-						<option value="2">2 +</option>
-						<option value="3">3 +</option>
-						<option value="4">4 +</option>
-						<option value="5">5 +</option>
-					</select>
-				</p>
-				<p>
-					Bathrooms &nbsp;&nbsp;&nbsp; <select name="bathrooms">
-						<option value="1">1 +</option>
-						<option value="2">2 +</option>
-						<option value="3">3 +</option>
-						<option value="4">4 +</option>
-						<option value="5">5 +</option>
-					</select>
-				</p>
-				<p>
-					Size (sq ft) &nbsp;&nbsp;&nbsp; <select name="size">
-						<option value="600+">600+</option>
-						<option value="1000+">1000+</option>
-						<option value="1400+">1400+</option>
-						<option value="2000+">2000+</option>
-						<option value="3000+">3000+</option> 
-						<option value="4000+">4000+</option>
-					</select>
-				</p>
-				<p>
-					Year &nbsp;&nbsp;&nbsp; <select name="year">
-						<option value="before 1900">before 1900</option>
-						<option value="1900+">1900+</option>
-						<option value="1930+">1930+</option>
-						<option value="1950+">1950+</option>
-						<option value="1970+">1970+</option>
-						<option value="1990+">1990+</option>
-						<option value="2010+">2010+</option>
-					</select>
-				</p>  -->
-				
 				<input type="submit" value="Search Estates">
 				
 			</form>

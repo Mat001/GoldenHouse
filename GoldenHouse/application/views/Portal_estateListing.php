@@ -159,9 +159,7 @@
 							  <td class="subrow"><?php echo $row->address;?></td>
 							</tr>
 							<tr>
-							  <td>$<?php echo $row->price; ?>
-							  
-							  </td>
+							  <td>$<?php echo $row->price; ?></td>
 							</tr>
 							<tr>
 							  <td><?php echo $row->bedrooms; ?> bedrooms, <?php echo $row->bathrooms; ?> bathrooms, <?php echo $row->type; ?>.</td>

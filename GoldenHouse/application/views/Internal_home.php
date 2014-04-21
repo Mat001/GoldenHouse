@@ -18,7 +18,7 @@
 	<nav class="center-ims">
 		<ul>
 			<li><a href="<?php echo base_url(); ?>Internal_home_controller">Home</a></li> 
-			<li><a href="<?php echo base_url(); ?>Internal_properties_controller">Properties</a></li>
+			<li><a href="<?php echo base_url(); ?>Internal_properties_controller">Properties</a></li>			
 			<li><a href="<?php echo base_url(); ?>Internal_customers_controller">Customers</a></li>
 			<li><a href="<?php echo base_url(); ?>Internal_accounting_controller">Accounting</a></li>
 			<li><a href="<?php echo base_url(); ?>Internal_admin_controller">Admin</a></li>
