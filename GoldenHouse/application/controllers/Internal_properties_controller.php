@@ -26,13 +26,27 @@ class Internal_properties_controller extends CI_Controller
 		$address = $this->input->post('address');
 		$descrip_sh = $this->input->post('descrip_sh');
 		$descr_lo = $this->input->post('descr_lo');
-		$floor_plan = $this->input->post('floor_plan_path');
+		$floor_plan_path = $this->input->post('floor_plan_path');
+		
+		$newrow = array(
+				
+				"image_path" => $image_path,
+				"sold" => $sold,
+				"type" => $type,
+				"price" => $price,
+				"bedrooms" => $bedrooms,
+				"bathrooms" => $bathrooms,
+				"size" => $size,
+				"year" => $year,
+				"location" => $location,
+				"address" => $address,
+				"descrip_sh" => $descrip_sh,
+				"descr_lo" => $descr_lo,
+				"floor_plan_path" => $floor_plan_path);
 		
 		$this->load->model("Model_properties");
-		$result = $this->Model_properties->insertPropertyToDb($image_path, $sold, $type, $price, $bedrooms, $bathrooms, 
-															$size, $year, $location, $address, $descrip_sh, $descr_lo);
+		$this->Model_properties->insertPropertyToDb($newrow);
 		$this->load->view('success_property_added');
-		
 	}
 	
 
@@ -45,6 +59,8 @@ class Internal_properties_controller extends CI_Controller
 	
 	public function updateProp()
 	{
+		// Get property info from view text fields (Internal_editProperties) and pass it onto the model (Model_properties)
+		$prop_id = $this->input->post('prop_id');
 		$image_path = $this->input->post('image_path');
 		$sold = $this->input->post('sold');
 		$type = $this->input->post('type');
@@ -57,13 +73,40 @@ class Internal_properties_controller extends CI_Controller
 		$address = $this->input->post('address');
 		$descrip_sh = $this->input->post('descrip_sh');
 		$descr_lo = $this->input->post('descr_lo');
-		$floor_plan = $this->input->post('floor_plan_path');
+		$floor_plan_path = $this->input->post('floor_plan_path');
+		
+		$newrow = array(
+				"prop_id" => $prop_id,
+				"image_path" => $image_path, 
+				"sold" => $sold, 
+				"type" => $type, 
+				"price" => $price, 
+				"bedrooms" => $bedrooms, 
+				"bathrooms" => $bathrooms, 
+				"size" => $size, 
+				"year" => $year, 
+				"location" => $location, 
+				"address" => $address, 
+				"descrip_sh" => $descrip_sh, 
+				"descr_lo" => $descr_lo, 
+				"floor_plan_path" => $floor_plan_path);
 	
 		$this->load->model("Model_properties");
-		$result = $this->Model_properties->updatePropertyInDb($image_path, $sold, $type, $price, $bedrooms, $bathrooms,
-															$size, $year, $location, $address, $descrip_sh, $descr_lo);
-		$this->load->view('success_property_updated'); // change to say "updated"
+		$this->Model_properties->updatePropertyInDb($newrow, $prop_id);
+		$this->load->view('success_property_updated'); 
 	
+	}
+	
+	public function deleteProperty()
+	{
+		$this->load->model('Model_properties');
+		
+		$prop_id = $this->input->post('prop_id');
+		
+		$oldrow = array( "prop_id" => $prop_id 	);
+		
+		$this->Model_properties->deletePr($oldrow);
+		$this->load->view('success_property_deleted');
 	}
 	
 	
