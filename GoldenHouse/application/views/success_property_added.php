@@ -22,7 +22,8 @@
 			<fieldset class="margin">
 			<legend>SUCCESS</legend><br>
 				<p>New property successfully added!</p><br>
-				<a style="color:black; font-size:x-small;" href="<?php echo base_url(); ?>Internal_home_controller">[&nbsp;Back to Home&nbsp;]</a>
+				<a style="color:black; font-size:x-small;" href="Internal_properties.php" onClick="history.back();return false;">[&nbsp;Back&nbsp;]</a>
+	    		<a style="color:black; font-size:x-small;" href="<?php echo base_url(); ?>Internal_home_controller">[&nbsp;Home&nbsp;]</a></h2>
 			</fieldset>
 		</div>
 	</section>

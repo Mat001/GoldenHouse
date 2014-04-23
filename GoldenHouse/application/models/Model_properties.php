@@ -2,7 +2,7 @@
 
 class Model_properties extends CI_Model
 {
-	// et properties from 'properties' table joined with 'images' table
+	// get properties from 'properties' table joined with 'images' table
 	public function getProperty()
 	{
 		$this->db->select('*');
@@ -29,10 +29,10 @@ class Model_properties extends CI_Model
 		return $query->result();
 	}
 	
-	// insert new property into properties table in DB. I used this source: https://www.youtube.com/watch?v=lcpCFrjAiCw
+	// insert new property into properties table in DB. I used this source: https://www.youtube.com/watch?v=lcpCFrjAiCw but then changed it.
 	public function insertPropertyToDb($data)
 	{
-		$this->db->update('properties', $data);
+		$this->db->insert('properties', $data);
 	}
 	
 	// get data ONLY from 'properties' table - no joins

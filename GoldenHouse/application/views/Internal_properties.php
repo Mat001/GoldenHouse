@@ -18,9 +18,7 @@
 	<header class="center-ims">
 		<h2>
 			Manage properties / images &nbsp;&nbsp;&nbsp; <a
-				style="color: black; font-size: x-small;"
-				href="<?php echo base_url(); ?>Internal_home_controller">[&nbsp;Back
-				to Home&nbsp;]</a>
+				style="color: black; font-size: x-small;" href="<?php echo base_url(); ?>Internal_home_controller">[&nbsp;Back to Home&nbsp;]</a>
 		</h2>
 	</header>
 
@@ -42,13 +40,25 @@
 					echo validation_errors (); // print validation errors 
 					echo "<br>Image file path: "; echo form_input( 'image_path' );
 					echo "<br> Sold: "; echo form_input( 'sold' ); echo " 0-not sold / 1-sold ";
-					echo "<br> Type: "; echo form_input ( 'type' ); 
+					$options = array(
+							'Single-family house'  => 'Single-family house',
+							'Multi-family house'    => 'Multi-family house',
+							'Apartment'   => 'Apartment');
+					echo "<br> Type: "; echo form_dropdown('type', $options);
+					
 					echo "<br> Price: "; echo form_input ( 'price' ); echo " $";
 					echo "<br> Bedrooms: "; echo form_input ( 'bedrooms' ); 
 					echo "<br> Bathrooms: "; echo form_input ( 'bathrooms' );
 					echo "<br> Size: "; echo form_input ( 'size' ); echo " sq ft";
 					echo "<br> Year: "; echo form_input ( 'year' ); 
-					echo "<br> Location: "; echo form_input ( 'location' ); 
+					$options = array(
+							'Walnut Creek'  => 'Walnut Creek',
+							'Lafayette'    => 'Lafayette',
+							'Concord'   => 'Concord',
+							'Richmond'   => 'Richmond',
+							'San Ramon'   => 'San Ramon');
+					echo "<br> Location: "; echo form_dropdown('location', $options);
+					
 					echo "<br> Address: "; echo form_input ( 'address' ); 
 					$data_sh = array('name' => 'descrip_sh', 'rows' => 6, 'cols' => 40);
 					echo "<br> Short description: "; echo form_textarea (  $data_sh );
@@ -83,10 +93,10 @@
 						foreach ($results as $row)
 						{ ?>
 							<option>
-							<?php 
-							echo 'id'.$row->prop_id.', '; echo $row-> sold.', '; echo $row->type.', '; echo '$'.$row->price.', '; 
-							echo $row->size.'sqf, '; echo $row->year.', '; echo $row->address;
-							?>
+								<?php 
+								echo 'id'.$row->prop_id.', '; echo $row-> sold.', '; echo $row->type.', '; echo '$'.$row->price.', '; 
+								echo $row->size.'sqf, '; echo $row->year.', '; echo $row->address;
+								?>
 							</option>
 						<?php } ?>	
 					</select>
@@ -107,18 +117,17 @@
 				<legend>DELETE PROPERTY</legend>
 				<p>Select property to delete.</p>
 
-				<form method="post" accept-charset="utf-8"
-					action="<?php echo base_url(); ?>Internal_properties_controller/deleteProperty">
+				<form method="post" accept-charset="utf-8" action="<?php echo base_url(); ?>Internal_properties_controller/deleteProperty">
 					<p>
 						<select name="property">
 						<?php 
 						foreach ($results as $row)
 						{ ?>
-							<option value="selected">
-							<?php 
-							echo 'id'.$row->prop_id.', '; echo $row-> sold.', '; echo $row->type.', '; echo '$'.$row->price.', '; 
-							echo $row->size.'sqf, '; echo $row->year.', '; echo $row->address;
-							?>
+							<option value="<?php echo $row->prop_id ?>">
+								<?php 
+								echo 'id'.$row->prop_id.', '; echo $row-> sold.', '; echo $row->type.', '; echo '$'.$row->price.', '; 
+								echo $row->size.'sqf, '; echo $row->year.', '; echo $row->address;
+								?>
 							</option>
 						<?php } ?>	
 					</select>

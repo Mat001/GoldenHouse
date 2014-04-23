@@ -1,4 +1,4 @@
- <?php
+  <?php
 class Internal_properties_controller extends CI_Controller
 {
 	// index()
@@ -60,20 +60,20 @@ class Internal_properties_controller extends CI_Controller
 	public function updateProp()
 	{
 		// Get property info from view text fields (Internal_editProperties) and pass it onto the model (Model_properties)
-		$prop_id = $this->input->post('prop_id');
-		$image_path = $this->input->post('image_path');
-		$sold = $this->input->post('sold');
-		$type = $this->input->post('type');
-		$price = $this->input->post('price');
-		$bedrooms = $this->input->post('bedrooms');
-		$bathrooms = $this->input->post('bathrooms');
-		$size = $this->input->post('size');
-		$year = $this->input->post('year');
-		$location = $this->input->post('location');
-		$address = $this->input->post('address');
-		$descrip_sh = $this->input->post('descrip_sh');
-		$descr_lo = $this->input->post('descr_lo');
-		$floor_plan_path = $this->input->post('floor_plan_path');
+		$prop_id = $this->input->get('prop_id');
+		$image_path = $this->input->get('image_path');
+		$sold = $this->input->get('sold');
+		$type = $this->input->get('type');
+		$price = $this->input->get('price');
+		$bedrooms = $this->input->get('bedrooms');
+		$bathrooms = $this->input->get('bathrooms');
+		$size = $this->input->get('size');
+		$year = $this->input->get('year');
+		$location = $this->input->get('location');
+		$address = $this->input->get('address');
+		$descrip_sh = $this->input->get('descrip_sh');
+		$descr_lo = $this->input->get('descr_lo');
+		$floor_plan_path = $this->input->get('floor_plan_path');
 		
 		$newrow = array(
 				"prop_id" => $prop_id,
@@ -101,10 +101,9 @@ class Internal_properties_controller extends CI_Controller
 	{
 		$this->load->model('Model_properties');
 		
-		$prop_id = $this->input->post('prop_id');
+		$prop_id = $this->input->post('property'); // get property_id value from the dropdown selection
 		
-		$oldrow = array( "prop_id" => $prop_id 	);
-		
+		$oldrow = array( "prop_id" => $prop_id	);
 		$this->Model_properties->deletePr($oldrow);
 		$this->load->view('success_property_deleted');
 	}
