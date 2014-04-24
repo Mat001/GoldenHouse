@@ -77,7 +77,6 @@
 
 	<!--  ******************************************    EDIT PROPERTY     ****************************************** -->
 
-	<br>
 	<section class="center">
 		<div align="left" id="edit property">
 			<fieldset class="margin">
