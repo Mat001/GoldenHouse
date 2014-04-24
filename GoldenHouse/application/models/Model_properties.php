@@ -12,14 +12,6 @@ class Model_properties extends CI_Model
 		
 		$query = $this->db->get();
 		return $query->result();
-		
-		// Perform validation???? - if query found the user (only ONE row - one user with this criteria) then return true otherwise false
-		/*
-		if($query->num_rows() == 1)
-		{  return $query->result(); }
-		else
-		{ return ('Database error!'); }
-		*/
 	}
 	
 	// get property images

@@ -198,14 +198,14 @@
 	<footer id=footer class="center" style="clear: both; padding-top: 40px " >
 		<h6>
 	    	<!-- GoldenHouse LLC -->
-	        Copyright 2014 &copy; GoldenHouseLLC  |  
+	        Copyright 2014 &copy; GoldenHouseLLC    
         			
 	        <!-- Terms and Conditions popup -->
-			<a style="color:#8B6914" href="<?php echo base_url(); ?>Home_controller/terms" 
-			   onclick="return popUpTerms('<?php echo base_url(); ?>Home_controller/terms')">Terms and Conditions</a>  |
+			<!-- <a style="color:#8B6914" href="<?php //echo base_url(); ?>Home_controller/terms" 
+			   onclick="return popUpTerms('<?php //echo base_url(); ?>Home_controller/terms')">Terms and Conditions</a>  | -->
 					
 			<!-- Agency Login -->
-	        <a style="color:#8B6914" href="<?php echo base_url(); ?>Login_controller">Agency Login</a> 		
+	       <!--  <a style="color:#8B6914" href="<?php //echo base_url(); ?>Login_controller">Agency Login</a>  --> 		
         </h6>
 	</footer>
 </body>
